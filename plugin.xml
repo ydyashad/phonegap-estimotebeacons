@@ -18,5 +18,7 @@
                 <param name="android-package" value="com.example.estimote" />
             </feature>
         </config-file>
+
     </platform>
+
 </plugin>

@@ -1,14 +1,14 @@
-package android;
+package com.example.estimote;
 
 import android.os.RemoteException;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import org.apache.cordova.CordovaWebView;
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaInterface;
-import org.apache.cordova.api.CordovaPlugin;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,11 +44,20 @@ public class EstimoteBeacons extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+        Beacon b = new Beacon("UUID", "macAddress", 1, 1, 1, 1);
+        List<Beacon> bs = new ArrayList<Beacon>();
+        bs.add(b);
+        EstimoteBeacons.this.beacons = bs;
         currentRegion = new Region("uniqueId", null, null);
         iBeaconManager.setRangingListener(new BeaconManager.RangingListener() {
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
-                EstimoteBeacons.this.beacons = beacons;
+                if (beacons == null || beacons.size() < 1) {
+
+                } else {
+                    EstimoteBeacons.this.beacons = beacons;
+                }
+
             }
         });
     }
