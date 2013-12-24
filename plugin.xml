@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.example.empty" version="0.9.9">
 
-<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-    id="pl.makingwaves.estimotebeacons"
-    version="0.1.0">
     <name>EstimoteBeacons</name>
-    <!-- ios -->
-    <platform name="ios">    
-        <config-file target="config.xml" parent="/*">
+    <description>EstimoteBeacons</description>
+    <license>Apache 2.0</license>
+
+    <js-module src="www/EstimoteBeacons.js" name="EstimoteBeacons">
+        <clobbers target="EstimoteBeacons" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+        <source-file src="src/android/EstimoteBeacons.java" target-dir="src/com/example/estimote" />
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="EstimoteBeacons">
-                <param name="ios-package" value="EstimoteBeacons" />
-                <param name="onload" value="true" />
+                <param name="android-package" value="com.example.estimote" />
             </feature>
         </config-file>
-        <js-module src="www/EstimoteBeacons.js" name="EstimoteBeacons">
-            <clobbers target="EstimoteBeacons" />
-        </js-module>
-        <header-file src="src/ios/EstimoteBeacons.h" />
-        <source-file src="src/ios/EstimoteBeacons.m" />
     </platform>
 </plugin>
