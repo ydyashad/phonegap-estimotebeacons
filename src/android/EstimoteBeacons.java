@@ -1,6 +1,7 @@
 package com.example.estimotebeacons;
 
 import android.os.RemoteException;
+import android.util.Log;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
@@ -64,6 +65,7 @@ public class EstimoteBeacons extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        Log.d(EstimoteBeacons.class.toString(), "action - >" + action);
 
         try {
             if (action.equalsIgnoreCase(START_ESTIMOTE_BEACONS_DISCOVERY_FOR_REGION)) {
