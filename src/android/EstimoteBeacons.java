@@ -33,7 +33,7 @@ public class EstimoteBeacons extends CordovaPlugin {
     public static final String GET_BEACONS = "getBeacons";
 
 
-    private BeaconManager iBeaconManager = new BeaconManager(this.cordova.getActivity().getApplicationContext());
+    private BeaconManager iBeaconManager;
 
 
 
@@ -45,6 +45,7 @@ public class EstimoteBeacons extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+        iBeaconManager = new BeaconManager(this.cordova.getActivity().getApplicationContext());
         Beacon b = new Beacon("UUID", "macAddress", 1, 1, 1, 1);
         List<Beacon> bs = new ArrayList<Beacon>();
         bs.add(b);
