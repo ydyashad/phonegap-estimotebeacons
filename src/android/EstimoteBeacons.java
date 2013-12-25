@@ -1,4 +1,4 @@
-package com.example.estimote;
+package com.example.estimotebeacons;
 
 import android.os.RemoteException;
 import com.estimote.sdk.Beacon;
