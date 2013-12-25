@@ -51,7 +51,7 @@ public class EstimoteBeacons extends CordovaPlugin {
         List<Beacon> bs = new ArrayList<Beacon>();
         bs.add(b);
         EstimoteBeacons.this.beacons = bs;
-        currentRegion = new Region("uniqueId", null, null);
+        currentRegion = new Region("B9407F30-F5F8-466E-AFF9-25556B57FE6D", null, null);
         iBeaconManager.setRangingListener(new BeaconManager.RangingListener() {
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
