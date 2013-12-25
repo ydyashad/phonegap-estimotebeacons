@@ -48,6 +48,7 @@ EstimoteBeacons.prototype.stopEstimoteBeaconsDiscoveryForRegion = function (succ
 };
 
 EstimoteBeacons.prototype.startRangingBeaconsInRegion = function (successCallback) {
+    alert("start ranging");
     if (typeof successCallback !== "function") {
         console.error("EstimoteBeacons.startRangingBeaconsInRegion failure: success callback parameter must be a function");
         return;
