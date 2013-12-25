@@ -5,6 +5,7 @@ import android.util.Log;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
+import com.estimote.sdk.Utils;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -46,7 +47,7 @@ public class EstimoteBeacons extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         iBeaconManager = new BeaconManager(this.cordova.getActivity().getApplicationContext());
-        Beacon b = new Beacon("12312312312312312312312312312312", "macAddress", 1, 1, 1, 1);
+        Beacon b = new Beacon(Utils.normalizeProximityUUID("12312312312312312312312312312312"), "macAddress", 1, 1, 1, 1);
         List<Beacon> bs = new ArrayList<Beacon>();
         bs.add(b);
         EstimoteBeacons.this.beacons = bs;
