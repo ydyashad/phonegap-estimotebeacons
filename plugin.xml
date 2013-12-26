@@ -18,8 +18,8 @@
                 <param name="android-package" value="com.example.estimotebeacons.EstimoteBeacons" />
             </feature>
         </config-file>
-        <framework src="libs/estimote-sdl-preview.jar" />
-        <framework src="libs/guava-15.0.jar" />
+        <source-file src="libs/estimote-sdl-preview.jar" target-dir="libs" />
+        <source-file src="libs/guava-15.0.jar" target-dir="libs" />
     </platform>
 
 </plugin>
