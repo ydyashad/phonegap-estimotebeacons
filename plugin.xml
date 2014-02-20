@@ -26,7 +26,6 @@
         <framework src="CoreBluetooth.framework" />
 	<framework src="CoreLocation.framework" />
 	<framework src="SystemConfiguration.framework" />
-	<source-file src="src/ios/libEstimoteSDK.a" framework="true" />
 	<header-file src="src/ios/ESTBeacon.h" />
 	<header-file src="src/ios/ESTBeaconDefinitions.h" />
 	<header-file src="src/ios/ESTBeaconManager.h" />
