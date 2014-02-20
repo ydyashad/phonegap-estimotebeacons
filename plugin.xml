@@ -10,6 +10,7 @@
     <js-module src="www/EstimoteBeacons.js" name="EstimoteBeacons">
         <clobbers target="EstimoteBeacons" />
     </js-module>
+    
     <!-- android -->
     <platform name="android">
         <source-file src="src/android/EstimoteBeacons.java" target-dir="src/com/example/estimotebeacons" />
@@ -21,5 +22,26 @@
         <source-file src="libs/estimote-sdk-preview.jar" target-dir="libs" />
         <source-file src="libs/guava-15.0.jar" target-dir="libs" />
     </platform>
+    
+    	<!-- ios -->
+    <platform name="ios">     
+        <framework src="CoreBluetooth.framework" />
+	<framework src="CoreLocation.framework" />
+	<framework src="SystemConfiguration.framework" />
+	<source-file src="src/ios/libEstimoteSDK.a" framework="true" />
+	<header-file src="src/ios/ESTBeacon.h" />
+	<header-file src="src/ios/ESTBeaconDefinitions.h" />
+	<header-file src="src/ios/ESTBeaconManager.h" />
+	<header-file src="src/ios/ESTBeaconRegion.h" />
+	<header-file src="src/ios/ESTBeaconUpdateInfo.h" />
+        <header-file src="src/ios/EstimoteBeacons.h" />
+        <source-file src="src/ios/EstimoteBeacons.m" />
 
+    	<config-file target="config.xml" parent="/*">
+            <feature name="EstimoteBeacons">
+                <param name="ios-package" value="EstimoteBeacons" />
+            </feature>
+        </config-file>
+    </platform>
+	
 </plugin>
